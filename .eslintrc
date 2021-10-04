@@ -1,0 +1,67 @@
+{
+  "settings": {
+    "react": {
+      "version": "detect"
+    },
+    "import/extensions": [".js", ".ts", ".tsx", ".d.ts"],
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx", ".d.ts"]
+    }
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:import/typescript",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "env": {
+    "es6": true,
+    "node": true,
+    "browser": true,
+    "jest/globals": true
+  },
+  "rules": {
+    "max-len": ["warn", { "code": 120 }],
+    "react-hooks/rules-of-hooks": "error",
+    "semi": "error",
+    "linebreak-style": ["error", "unix"],
+    "quotes": [
+      2,
+      "single",
+      {
+        "avoidEscape": true,
+        "allowTemplateLiterals": true
+      }
+    ],
+    "prettier/prettier": [
+      "error",
+      {
+        "semi": true,
+        "trailingComma": "es5",
+        "singleQuote": true,
+        "printWidth": 100,
+        "endOfLine": "auto"
+      }
+    ],
+    "no-empty-function": "off",
+    "@typescript-eslint/no-empty-function": ["error"],
+    "react/prop-types": "off",
+    "@typescript-eslint/ban-ts-comment": "off",
+    "@typescript-eslint/no-var-requires": "off",
+    "react/react-in-jsx-scope": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off"
+  },
+  "plugins": ["@typescript-eslint/eslint-plugin", "eslint-plugin-import", "eslint-plugin-jest", "prettier", "react", "react-hooks"]
+}
