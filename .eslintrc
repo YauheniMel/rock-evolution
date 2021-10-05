@@ -63,5 +63,12 @@
     "react/react-in-jsx-scope": "off",
     "@typescript-eslint/explicit-module-boundary-types": "off"
   },
-  "plugins": ["@typescript-eslint/eslint-plugin", "eslint-plugin-import", "eslint-plugin-jest", "prettier", "react", "react-hooks"]
+  "plugins": [
+    "@typescript-eslint/eslint-plugin",
+    "eslint-plugin-import",
+    "eslint-plugin-jest",
+    "prettier",
+    "react",
+    "react-hooks"
+  ]
 }
