@@ -1,4 +1,5 @@
-import * as React from 'react';
+import React from 'react';
+import type { FC } from 'react';
 import PropTypes from 'prop-types';
 import ButtonUnstyled, { buttonUnstyledClasses } from '@mui/core/ButtonUnstyled';
 import { styled } from '@mui/system';
@@ -16,10 +17,6 @@ const ButtonRoot = React.forwardRef(function ButtonRoot(props, ref) {
     </svg>
   );
 });
-
-ButtonRoot.propTypes = {
-  children: PropTypes.node,
-};
 
 const CustomButtonRoot = styled(ButtonRoot)(
   ({ theme }) => `
@@ -104,10 +101,13 @@ const CustomButtonRoot = styled(ButtonRoot)(
   }`,
 );
 
-const SvgButton = React.forwardRef(function SvgButton(props, ref) {
-  return <ButtonUnstyled {...props} component={CustomButtonRoot} ref={ref} />;
-});
+interface IButtonInfo {
+  onClick: () => void;
+  content: string;
+}
 
-export default function UnstyledButtonCustom() {
-  return <SvgButton>Button</SvgButton>;
+export const ButtonInfo: FC <IButtonInfo> = ({ onClick, content }, props) => {
+  return <ButtonUnstyled {...props} component={CustomButtonRoot} onClick={ onClick }>
+    { content }
+  </ButtonUnstyled>;
 }
